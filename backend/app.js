@@ -9,6 +9,10 @@ const app = express();
 
 ///////route import //////
 const authRoutes = require("./routes/auth");
+const userRoutes = require("./routes/user");
+const categoryRoute = require("./routes/category");
+const productRoute = require("./routes/product");
+const orderRoute = require("./routes/order");
 
 //////////Database connection///////////////
 mongoose
@@ -32,6 +36,10 @@ app.use(cookeiParser());
 
 /////routes////////////
 app.use("/api", authRoutes);
+app.use("/api", userRoutes);
+app.use("/api", categoryRoute);
+app.use("/api", productRoute);
+app.use("/api", orderRoute);
 
 /////////////////////
 
